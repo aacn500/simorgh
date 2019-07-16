@@ -160,7 +160,7 @@
     "@storybook/theming": "^5.1.9",
     "@testing-library/react": "^8.0.1",
     "amphtml-validator": "^1.0.23",
-    "audit-ci": "^2.1.0",
+    "audit-ci": "^2.2.0",
     "babel-eslint": "^10.0.2",
     "bbc-a11y": "^2.3.0",
     "chalk": "^2.4.1",
