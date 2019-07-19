@@ -1,5 +1,6 @@
 module.exports = {
   extends: [
+    // 'plugin:@typescript-eslint/recommended',
     'airbnb',
     'plugin:prettier/recommended',
     'plugin:jsx-a11y/recommended',
@@ -12,7 +13,7 @@ module.exports = {
     jest: true,
     node: true,
   },
-  parser: 'babel-eslint',
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2017,
     sourceType: 'module',
@@ -23,7 +24,10 @@ module.exports = {
   plugins: ['prettier', 'json', 'jsx-a11y', 'react-hooks', 'cypress'],
   rules: {
     'react/jsx-one-expression-per-line': 'off',
+    'react/jsx-filename-extension': { 'extensions': ['.jsx', '.tsx']},
+    'react/prop-types': 'off',
     'linebreak-style': process.platform === 'win32' ? 'off' : ['error', 'unix'],
+    '@typescript-eslint/indent': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'import/no-extraneous-dependencies': ['off', { 'devDependencies': ['/.storybook/**', '**/stories.jsx', '/src/testHelpers/**', '/dataValidator/**'] }],
