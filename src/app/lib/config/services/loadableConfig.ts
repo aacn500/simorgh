@@ -70,6 +70,9 @@ const loadableConfig: LoadableConfigStore = {
   igbo: {
     // This is GROSS but also typescript really doesn't like dynamic imports being treated as generic so
     loader: () => import(/* webpackChunkName: 'igbo' */ './igbo') as unknown as Promise<WrappyThing<Service>>,
+    // This looks similarly gross at first glance, but resolveWeak should
+    // always return a number with our webpack config.
+    // See also: https://webpack.js.org/api/module-methods/#requireresolve
     webpack: () => [require.resolveWeak('./igbo') as number],
   },
   // indonesia: {
