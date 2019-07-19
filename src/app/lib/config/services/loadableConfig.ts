@@ -9,6 +9,7 @@ interface LoadableConfigStore {
   [serviceName: string]: LoadableConfig,
 };
 
+// TODO actually name this
 export interface WrappyThing<T> {
   default: T,
 };
@@ -18,190 +19,190 @@ export interface WrappyThing<T> {
  * to dynamically load each service's config.
  */
 const loadableConfig: LoadableConfigStore = {
-  // afaanoromoo: {
-  //   loader: () =>
-  //     import(/* webpackChunkName: 'afaanoromoo' */ './afaanoromoo.js'),
-  //   webpack: () => [require.resolveWeak('./afaanoromoo.js')],
-  // },
-  // afrique: {
-  //   loader: () => import(/* webpackChunkName: 'afrique' */ './afrique.js'),
-  //   webpack: () => [require.resolveWeak('./afrique.js')],
-  // },
-  // amharic: {
-  //   loader: () => import(/* webpackChunkName: 'amharic' */ './amharic.js'),
-  //   webpack: () => [require.resolveWeak('./amharic.js')],
-  // },
-  // arabic: {
-  //   loader: () => import(/* webpackChunkName: 'arabic' */ './arabic.js'),
-  //   webpack: () => [require.resolveWeak('./arabic.js')],
-  // },
-  // azeri: {
-  //   loader: () => import(/* webpackChunkName: 'azeri' */ './azeri.js'),
-  //   webpack: () => [require.resolveWeak('./azeri.js')],
-  // },
-  // bengali: {
-  //   loader: () => import(/* webpackChunkName: 'bengali' */ './bengali.js'),
-  //   webpack: () => [require.resolveWeak('./bengali.js')],
-  // },
-  // burmese: {
-  //   loader: () => import(/* webpackChunkName: 'burmese' */ './burmese.js'),
-  //   webpack: () => [require.resolveWeak('./burmese.js')],
-  // },
-  // cymrufyw: {
-  //   loader: () => import(/* webpackChunkName: 'cymrufyw' */ './cymrufyw.js'),
-  //   webpack: () => [require.resolveWeak('./cymrufyw.js')],
-  // },
-  // gahuza: {
-  //   loader: () => import(/* webpackChunkName: 'gahuza' */ './gahuza.js'),
-  //   webpack: () => [require.resolveWeak('./gahuza.js')],
-  // },
-  // gujarati: {
-  //   loader: () => import(/* webpackChunkName: 'gujarati' */ './gujarati.js'),
-  //   webpack: () => [require.resolveWeak('./gujarati.js')],
-  // },
-  // hausa: {
-  //   loader: () => import(/* webpackChunkName: 'hausa' */ './hausa.js'),
-  //   webpack: () => [require.resolveWeak('./hausa.js')],
-  // },
-  // hindi: {
-  //   loader: () => import(/* webpackChunkName: 'hindi' */ './hindi.js'),
-  //   webpack: () => [require.resolveWeak('./hindi.js')],
-  // },
-  igbo: {
+  afaanoromoo: {
     // This is GROSS but also typescript really doesn't like dynamic imports being treated as generic so
-    loader: () => import(/* webpackChunkName: 'igbo' */ './igbo') as unknown as Promise<WrappyThing<Service>>,
+    loader: () =>
+      import(/* webpackChunkName: 'afaanoromoo' */ './afaanoromoo') as unknown as Promise<WrappyThing<Service>>,
     // This looks similarly gross at first glance, but resolveWeak should
     // always return a number with our webpack config.
     // See also: https://webpack.js.org/api/module-methods/#requireresolve
+    webpack: () => [require.resolveWeak('./afaanoromoo') as number],
+  },
+  afrique: {
+    loader: () => import(/* webpackChunkName: 'afrique' */ './afrique') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./afrique') as number],
+  },
+  amharic: {
+    loader: () => import(/* webpackChunkName: 'amharic' */ './amharic') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./amharic') as number],
+  },
+  arabic: {
+    loader: () => import(/* webpackChunkName: 'arabic' */ './arabic') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./arabic') as number],
+  },
+  azeri: {
+    loader: () => import(/* webpackChunkName: 'azeri' */ './azeri') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./azeri') as number],
+  },
+  bengali: {
+    loader: () => import(/* webpackChunkName: 'bengali' */ './bengali') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./bengali') as number],
+  },
+  burmese: {
+    loader: () => import(/* webpackChunkName: 'burmese' */ './burmese') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./burmese') as number],
+  },
+  cymrufyw: {
+    loader: () => import(/* webpackChunkName: 'cymrufyw' */ './cymrufyw') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./cymrufyw') as number],
+  },
+  gahuza: {
+    loader: () => import(/* webpackChunkName: 'gahuza' */ './gahuza') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./gahuza') as number],
+  },
+  gujarati: {
+    loader: () => import(/* webpackChunkName: 'gujarati' */ './gujarati') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./gujarati') as number],
+  },
+  hausa: {
+    loader: () => import(/* webpackChunkName: 'hausa' */ './hausa') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./hausa') as number],
+  },
+  hindi: {
+    loader: () => import(/* webpackChunkName: 'hindi' */ './hindi') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./hindi') as number],
+  },
+  igbo: {
+    loader: () => import(/* webpackChunkName: 'igbo' */ './igbo') as unknown as Promise<WrappyThing<Service>>,
     webpack: () => [require.resolveWeak('./igbo') as number],
   },
-  // indonesia: {
-  //   loader: () => import(/* webpackChunkName: 'indonesia' */ './indonesia.js'),
-  //   webpack: () => [require.resolveWeak('./indonesia.js')],
-  // },
-  // japanese: {
-  //   loader: () => import(/* webpackChunkName: 'japanese' */ './japanese.js'),
-  //   webpack: () => [require.resolveWeak('./japanese.js')],
-  // },
-  // korean: {
-  //   loader: () => import(/* webpackChunkName: 'korean' */ './korean.js'),
-  //   webpack: () => [require.resolveWeak('./korean.js')],
-  // },
-  // kyrgyz: {
-  //   loader: () => import(/* webpackChunkName: 'kyrgyz' */ './kyrgyz.js'),
-  //   webpack: () => [require.resolveWeak('./kyrgyz.js')],
-  // },
-  // marathi: {
-  //   loader: () => import(/* webpackChunkName: 'marathi' */ './marathi.js'),
-  //   webpack: () => [require.resolveWeak('./marathi.js')],
-  // },
-  // mundo: {
-  //   loader: () => import(/* webpackChunkName: 'mundo' */ './mundo.js'),
-  //   webpack: () => [require.resolveWeak('./mundo.js')],
-  // },
-  // naidheachdan: {
-  //   loader: () =>
-  //     import(/* webpackChunkName: 'naidheachdan' */ './naidheachdan.js'),
-  //   webpack: () => [require.resolveWeak('./naidheachdan.js')],
-  // },
-  // nepali: {
-  //   loader: () => import(/* webpackChunkName: 'nepali' */ './nepali.js'),
-  //   webpack: () => [require.resolveWeak('./nepali.js')],
-  // },
-  // news: {
-  //   loader: () => import(/* webpackChunkName: 'news' */ './news.js'),
-  //   webpack: () => [require.resolveWeak('./news.js')],
-  // },
-  // pashto: {
-  //   loader: () => import(/* webpackChunkName: 'pashto' */ './pashto.js'),
-  //   webpack: () => [require.resolveWeak('./pashto.js')],
-  // },
-  // persian: {
-  //   loader: () => import(/* webpackChunkName: 'persian' */ './persian.js'),
-  //   webpack: () => [require.resolveWeak('./persian.js')],
-  // },
+  indonesia: {
+    loader: () => import(/* webpackChunkName: 'indonesia' */ './indonesia') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./indonesia') as number],
+  },
+  japanese: {
+    loader: () => import(/* webpackChunkName: 'japanese' */ './japanese') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./japanese') as number],
+  },
+  korean: {
+    loader: () => import(/* webpackChunkName: 'korean' */ './korean') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./korean') as number],
+  },
+  kyrgyz: {
+    loader: () => import(/* webpackChunkName: 'kyrgyz' */ './kyrgyz') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./kyrgyz') as number],
+  },
+  marathi: {
+    loader: () => import(/* webpackChunkName: 'marathi' */ './marathi') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./marathi') as number],
+  },
+  mundo: {
+    loader: () => import(/* webpackChunkName: 'mundo' */ './mundo') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./mundo') as number],
+  },
+  naidheachdan: {
+    loader: () =>
+      import(/* webpackChunkName: 'naidheachdan' */ './naidheachdan') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./naidheachdan') as number],
+  },
+  nepali: {
+    loader: () => import(/* webpackChunkName: 'nepali' */ './nepali') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./nepali') as number],
+  },
+  news: {
+    loader: () => import(/* webpackChunkName: 'news' */ './news') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./news') as number],
+  },
+  pashto: {
+    loader: () => import(/* webpackChunkName: 'pashto' */ './pashto') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./pashto') as number],
+  },
+  persian: {
+    loader: () => import(/* webpackChunkName: 'persian' */ './persian') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./persian') as number],
+  },
   pidgin: {
     loader: () => import(/* webpackChunkName: 'pidgin' */ './pidgin') as unknown as Promise<WrappyThing<Service>>,
     webpack: () => [require.resolveWeak('./pidgin') as number],
   },
-  // portuguese: {
-  //   loader: () =>
-  //     import(/* webpackChunkName: 'portuguese' */ './portuguese.js'),
-  //   webpack: () => [require.resolveWeak('./portuguese.js')],
-  // },
-  // punjabi: {
-  //   loader: () => import(/* webpackChunkName: 'punjabi' */ './punjabi.js'),
-  //   webpack: () => [require.resolveWeak('./punjabi.js')],
-  // },
-  // russian: {
-  //   loader: () => import(/* webpackChunkName: 'russian' */ './russian.js'),
-  //   webpack: () => [require.resolveWeak('./russian.js')],
-  // },
-  // serbian: {
-  //   loader: () => import(/* webpackChunkName: 'serbian' */ './serbian.js'),
-  //   webpack: () => [require.resolveWeak('./serbian.js')],
-  // },
-  // sinhala: {
-  //   loader: () => import(/* webpackChunkName: 'sinhala' */ './sinhala.js'),
-  //   webpack: () => [require.resolveWeak('./sinhala.js')],
-  // },
-  // somali: {
-  //   loader: () => import(/* webpackChunkName: 'somali' */ './somali.js'),
-  //   webpack: () => [require.resolveWeak('./somali.js')],
-  // },
-  // swahili: {
-  //   loader: () => import(/* webpackChunkName: 'swahili' */ './swahili.js'),
-  //   webpack: () => [require.resolveWeak('./swahili.js')],
-  // },
-  // tamil: {
-  //   loader: () => import(/* webpackChunkName: 'tamil' */ './tamil.js'),
-  //   webpack: () => [require.resolveWeak('./tamil.js')],
-  // },
-  // telugu: {
-  //   loader: () => import(/* webpackChunkName: 'telugu' */ './telugu.js'),
-  //   webpack: () => [require.resolveWeak('./telugu.js')],
-  // },
-  // thai: {
-  //   loader: () => import(/* webpackChunkName: 'thai' */ './thai.js'),
-  //   webpack: () => [require.resolveWeak('./thai.js')],
-  // },
-  // tigrinya: {
-  //   loader: () => import(/* webpackChunkName: 'tigrinya' */ './tigrinya.js'),
-  //   webpack: () => [require.resolveWeak('./tigrinya.js')],
-  // },
-  // turkce: {
-  //   loader: () => import(/* webpackChunkName: 'turkce' */ './turkce.js'),
-  //   webpack: () => [require.resolveWeak('./turkce.js')],
-  // },
-  // ukchina: {
-  //   loader: () => import(/* webpackChunkName: 'ukchina' */ './ukchina.js'),
-  //   webpack: () => [require.resolveWeak('./ukchina.js')],
-  // },
-  // ukrainian: {
-  //   loader: () => import(/* webpackChunkName: 'ukrainian' */ './ukrainian.js'),
-  //   webpack: () => [require.resolveWeak('./ukrainian.js')],
-  // },
-  // urdu: {
-  //   loader: () => import(/* webpackChunkName: 'urdu' */ './urdu.js'),
-  //   webpack: () => [require.resolveWeak('./urdu.js')],
-  // },
-  // uzbek: {
-  //   loader: () => import(/* webpackChunkName: 'uzbek' */ './uzbek.js'),
-  //   webpack: () => [require.resolveWeak('./uzbek.js')],
-  // },
-  // vietnamese: {
-  //   loader: () =>
-  //     import(/* webpackChunkName: 'vietnamese' */ './vietnamese.js'),
-  //   webpack: () => [require.resolveWeak('./vietnamese.js')],
-  // },
+  portuguese: {
+    loader: () =>
+      import(/* webpackChunkName: 'portuguese' */ './portuguese') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./portuguese') as number],
+  },
+  punjabi: {
+    loader: () => import(/* webpackChunkName: 'punjabi' */ './punjabi') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./punjabi') as number],
+  },
+  russian: {
+    loader: () => import(/* webpackChunkName: 'russian' */ './russian') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./russian') as number],
+  },
+  serbian: {
+    loader: () => import(/* webpackChunkName: 'serbian' */ './serbian') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./serbian') as number],
+  },
+  sinhala: {
+    loader: () => import(/* webpackChunkName: 'sinhala' */ './sinhala') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./sinhala') as number],
+  },
+  somali: {
+    loader: () => import(/* webpackChunkName: 'somali' */ './somali') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./somali') as number],
+  },
+  swahili: {
+    loader: () => import(/* webpackChunkName: 'swahili' */ './swahili') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./swahili') as number],
+  },
+  tamil: {
+    loader: () => import(/* webpackChunkName: 'tamil' */ './tamil') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./tamil') as number],
+  },
+  telugu: {
+    loader: () => import(/* webpackChunkName: 'telugu' */ './telugu') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./telugu') as number],
+  },
+  thai: {
+    loader: () => import(/* webpackChunkName: 'thai' */ './thai') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./thai') as number],
+  },
+  tigrinya: {
+    loader: () => import(/* webpackChunkName: 'tigrinya' */ './tigrinya') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./tigrinya') as number],
+  },
+  turkce: {
+    loader: () => import(/* webpackChunkName: 'turkce' */ './turkce') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./turkce') as number],
+  },
+  ukchina: {
+    loader: () => import(/* webpackChunkName: 'ukchina' */ './ukchina') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./ukchina') as number],
+  },
+  ukrainian: {
+    loader: () => import(/* webpackChunkName: 'ukrainian' */ './ukrainian') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./ukrainian') as number],
+  },
+  urdu: {
+    loader: () => import(/* webpackChunkName: 'urdu' */ './urdu') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./urdu') as number],
+  },
+  uzbek: {
+    loader: () => import(/* webpackChunkName: 'uzbek' */ './uzbek') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./uzbek') as number],
+  },
+  vietnamese: {
+    loader: () =>
+      import(/* webpackChunkName: 'vietnamese' */ './vietnamese') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./vietnamese') as number],
+  },
   yoruba: {
     loader: () => import(/* webpackChunkName: 'yoruba' */ './yoruba') as unknown as Promise<WrappyThing<Service>>,
     webpack: () => [require.resolveWeak('./yoruba') as number],
   },
-  // zhongwen: {
-  //   loader: () => import(/* webpackChunkName: 'zhongwen' */ './zhongwen.js'),
-  //   webpack: () => [require.resolveWeak('./zhongwen.js')],
-  // },
+  zhongwen: {
+    loader: () => import(/* webpackChunkName: 'zhongwen' */ './zhongwen') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./zhongwen') as number],
+  },
 };
 
 export default loadableConfig;
