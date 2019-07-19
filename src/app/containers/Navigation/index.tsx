@@ -18,7 +18,7 @@ const NavigationContainer = () => {
   return (
     <Navigation script={script} skipLinkText={skipLinkText} service={service}>
       <NavigationUl>
-        {navigation.map((item: NavigationConfig, index: number) => {
+        {navigation.map((item, index) => {
           const { title, url } = item;
           const active = index === 0;
 
