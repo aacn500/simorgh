@@ -3,7 +3,9 @@ import { igbo as brandSVG } from '@bbc/psammead-assets/svgs';
 import { latin } from '@bbc/gel-foundations/scripts';
 import '@bbc/psammead-locales/moment/ig';
 
-const igbo = {
+import { Service } from '../../../contexts/ServiceContext';
+
+const igbo: Service = {
   product: 'BBC News',
   articleTimestampPrefix: 'Updated',
   atiAnalyticsAppName: 'news-igbo',

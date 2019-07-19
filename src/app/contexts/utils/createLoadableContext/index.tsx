@@ -1,7 +1,11 @@
 import React from 'react';
 import Loadable from 'react-loadable';
 
-const createLoadableContext = (Context, loadableConfig) =>
+import { Service } from '../../ServiceContext';
+
+import { LoadableConfig } from '../../../lib/config/services/loadableConfig';
+
+const createLoadableContext = (Context: React.Context<Service>, loadableConfig: LoadableConfig) =>
   Loadable({
     ...loadableConfig,
     loading: () => null,
