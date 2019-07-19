@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import { shouldMatchSnapshot } from '../../../testHelpers';
 import FrontPageContainer from './index';
 import igboConfig from '../../lib/config/services/igbo';
-import igboData from '../../../../data/igbo/frontpage';
+import igboData from '../../../../data/igbo/frontpage/index.json';
 import toggleReducer from '../../reducers/ToggleReducer';
 import defaultToggles from '../../lib/config/toggles';
 

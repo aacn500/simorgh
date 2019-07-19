@@ -4,7 +4,7 @@ import pathOr from 'ramda/src/pathOr';
 import { ServiceContextProvider } from '../../contexts/ServiceContext';
 import { RequestContextProvider } from '../../contexts/RequestContext';
 import StoryPromoContainer from '.';
-import fixture from '../../../../data/pidgin/frontpage';
+import fixture from '../../../../data/pidgin/frontpage/index.json';
 import AmpDecorator from '../../../../.storybook/helpers/ampDecorator';
 
 const mediaFixture = type =>

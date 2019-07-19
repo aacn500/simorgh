@@ -41,6 +41,7 @@ module.exports = {
         corejs: '3',
       },
     ],
+    '@babel/preset-typescript',
     '@babel/preset-react', // transform JSX to JS
   ],
   plugins: plugins,

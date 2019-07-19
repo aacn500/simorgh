@@ -4,6 +4,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:cypress/recommended',
+    'plugin:import/typescript',
   ],
   env: {
     es6: true,
@@ -25,6 +26,6 @@ module.exports = {
     'linebreak-style': process.platform === 'win32' ? 'off' : ['error', 'unix'],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
-    'import/no-extraneous-dependencies': ['off', {'devDependencies': ['/.storybook/**', '**/stories.jsx', '/src/testHelpers/**', '/dataValidator/**']}],
+    'import/no-extraneous-dependencies': ['off', { 'devDependencies': ['/.storybook/**', '**/stories.jsx', '/src/testHelpers/**', '/dataValidator/**'] }],
   },
 };
