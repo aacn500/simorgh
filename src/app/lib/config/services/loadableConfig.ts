@@ -117,10 +117,10 @@ const loadableConfig: LoadableConfigStore = {
   //   loader: () => import(/* webpackChunkName: 'persian' */ './persian.js'),
   //   webpack: () => [require.resolveWeak('./persian.js')],
   // },
-  // pidgin: {
-  //   loader: () => import(/* webpackChunkName: 'pidgin' */ './pidgin.js'),
-  //   webpack: () => [require.resolveWeak('./pidgin.js')],
-  // },
+  pidgin: {
+    loader: () => import(/* webpackChunkName: 'pidgin' */ './pidgin') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./pidgin') as number],
+  },
   // portuguese: {
   //   loader: () =>
   //     import(/* webpackChunkName: 'portuguese' */ './portuguese.js'),
@@ -191,10 +191,10 @@ const loadableConfig: LoadableConfigStore = {
   //     import(/* webpackChunkName: 'vietnamese' */ './vietnamese.js'),
   //   webpack: () => [require.resolveWeak('./vietnamese.js')],
   // },
-  // yoruba: {
-  //   loader: () => import(/* webpackChunkName: 'yoruba' */ './yoruba.js'),
-  //   webpack: () => [require.resolveWeak('./yoruba.js')],
-  // },
+  yoruba: {
+    loader: () => import(/* webpackChunkName: 'yoruba' */ './yoruba') as unknown as Promise<WrappyThing<Service>>,
+    webpack: () => [require.resolveWeak('./yoruba') as number],
+  },
   // zhongwen: {
   //   loader: () => import(/* webpackChunkName: 'zhongwen' */ './zhongwen.js'),
   //   webpack: () => [require.resolveWeak('./zhongwen.js')],
