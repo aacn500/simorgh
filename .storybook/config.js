@@ -3,7 +3,7 @@ import { configure, addDecorator, addParameters } from '@storybook/react';
 import { create } from '@storybook/theming';
 import GlobalStyle from '../src/app/lib/globalStyles';
 
-const req = require.context('../src/app', true, /\.stories\.jsx$/);
+const req = require.context('../src/app', true, /\.stories\.(j|t)sx?$/);
 
 function loadStories() {
   req.keys().forEach(filename => req(filename));

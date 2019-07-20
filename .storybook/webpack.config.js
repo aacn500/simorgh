@@ -1,6 +1,26 @@
 const webpack = require('webpack');
 
 module.exports = {
+  resolve: { extensions: ['.js', '.jsx', '.ts', '.tsx'] }, // resolves `import '../Foo'` to `../Foo/index.jsx`
+  module: {
+    rules: [
+      // tell Webpack to use the .babelrc to know how to transform JS/JSX to ES2015 JS
+      {
+        test: /\.(js|jsx|mjs|ts|tsx)$/,
+        include: /src/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              babelrc: true,
+              cacheDirectory: true,
+              presets: [],
+            },
+          },
+        ],
+      },
+    ],
+  },
   plugins: [
     /*
      * This replaces calls to logger.node.js with logger.web.js, a client

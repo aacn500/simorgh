@@ -166,6 +166,7 @@
     "@types/jest": "^24.0.15",
     "@types/react": "^16.8.23",
     "@types/react-loadable": "^5.5.1",
+    "@types/storybook__react": "^4.0.2",
     "@types/webpack-env": "^1.14.0",
     "@typescript-eslint/eslint-plugin": "^1.12.0",
     "@typescript-eslint/parser": "^1.12.0",
