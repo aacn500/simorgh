@@ -34,7 +34,7 @@ describe('Navigation Container', () => {
     it('should render a Navigation with a Skip to content link, linking to #content', () => {
       const { container } = render(<NavigationContainer />);
 
-      const skipLink = container.querySelector('a');
+      const skipLink = container.querySelector('a') as HTMLAnchorElement;
       const skipLinkHref = skipLink.getAttribute('href');
 
       expect(skipLinkHref).toBe('#content');
